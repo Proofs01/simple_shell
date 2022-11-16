@@ -1,4 +1,4 @@
-#fndef _SHELL_H_
+#ifndef _SHELL_H_
 #define _SHELL_H_
 
 #include <stdio.h>
@@ -45,9 +45,9 @@ extern char **environ;
  */
 typedef struct liststr
 {
-		int num;
-		char *str;
-		struct liststr *next;
+	int num;
+	char *str;
+	struct liststr *next;
 } list_t;
 
 /**
@@ -88,7 +88,7 @@ typedef struct passinfo
 	char **environ;
 	int env_changed;
 	int status;
-	
+
 	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
